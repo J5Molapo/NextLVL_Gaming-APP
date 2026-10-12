@@ -11,186 +11,478 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Checkout Glass Card -->
+        <!-- Checkout Header & Dynamic Selected Items Basket -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:background="@drawable/glass_card_highlighted"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Checkout"
-                android:textColor="@color/white"
+                android:letterSpacing="0.06"
+                android:text="Checkout Basket"
+                android:textColor="@color/solar_lime"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvCheckoutItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Racing Simulator Challenge - R179.00"
+                android:layout_marginTop="2dp"
+                android:text="Selected items in your order"
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Payment Method"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <!-- Payment Method Selector Pills -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnPayCapitec"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="Capitec pay"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnPayOzow"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="Ozow"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnPayCard"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="Card (saved or new)"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <TextView
-                android:id="@+id/tvPaymentDetailsLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Capitec Pay details"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Capitec mobile number"
-                app:boxBackgroundMode="none"
-                app:hintAnimationEnabled="true"
-
-                app:hintTextColor="#00FF66"
-                android:textColorHint="@color/text_gray">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPaymentAccount"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/glass_input_selector"
-                    android:inputType="phone"
-                    android:paddingHorizontal="16dp"
-                    android:textColor="@color/white" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="Full name"
-                app:boxBackgroundMode="none"
-                app:hintAnimationEnabled="true"
-
-                app:hintTextColor="#00FF66"
-                android:textColorHint="@color/text_gray">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etFullName"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/glass_input_selector"
-                    android:paddingHorizontal="16dp"
-                    android:textColor="@color/white" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginVertical="12dp"
                 android:background="#30FFFFFF" />
 
+            <!-- Dynamic Selected Items Container (Populated at Runtime) -->
+            <LinearLayout
+                android:id="@+id/checkoutItemsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="#30FFFFFF" />
+
+            <!-- Dynamic Total Summary -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvTotalLabel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Total: R179.00"
+                    android:text="Total Amount Due:"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnPayNow"
-                    style="@style/Widget.Material3.Button.UnelevatedButton"
-                    android:layout_width="120dp"
-                    android:layout_height="46dp"
-                    android:background="@drawable/glow_button_green"
-                    android:text="Pay now"
-                    android:textColor="#000000"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@null" />
-
+                <TextView
+                    android:id="@+id/tvCheckoutTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R0.00"
+                    android:textColor="#00FF66"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
+
+        <!-- Payment Method Selector Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/glass_card_background"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Payment Method"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Payment Partner Image Selector Pills -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <!-- 1. Capitec Pay -->
+                <LinearLayout
+                    android:id="@+id/btnPayCapitec"
+                    android:layout_width="0dp"
+                    android:layout_height="68dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/nav_pill_button_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/capitec" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Capitec Pay"
+                        android:textColor="@color/nav_pill_text_color"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- 2. Ozow -->
+                <LinearLayout
+                    android:id="@+id/btnPayOzow"
+                    android:layout_width="0dp"
+                    android:layout_height="68dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/nav_pill_button_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ozow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Ozow"
+                        android:textColor="@color/nav_pill_text_color"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- 3. Mastercard / Card -->
+                <LinearLayout
+                    android:id="@+id/btnPayCard"
+                    android:layout_width="0dp"
+                    android:layout_height="68dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/nav_pill_button_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mastercard" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Card"
+                        android:textColor="@color/nav_pill_text_color"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- DYNAMIC PAYMENT METHOD FORM FIELDS -->
+
+            <!-- FORM 1: CAPITEC PAY FORM -->
+            <LinearLayout
+                android:id="@+id/layoutCapitecDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capitec Pay Details"
+                    android:textColor="#00FF66"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Capitec registered mobile number"
+                    app:boxBackgroundMode="none"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="#00FF66"
+                    android:textColorHint="@color/text_gray">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCapitecMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/glass_input_selector"
+                        android:gravity="center_vertical"
+                        android:inputType="phone"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Full name on Capitec account"
+                    app:boxBackgroundMode="none"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="#00FF66"
+                    android:textColorHint="@color/text_gray">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCapitecName"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/glass_input_selector"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- FORM 2: OZOW PAYMENT FORM -->
+            <LinearLayout
+                android:id="@+id/layoutOzowDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ozow Instant EFT Details"
+                    android:textColor="#00FF66"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Ozow mobile number"
+                    app:boxBackgroundMode="none"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="#00FF66"
+                    android:textColorHint="@color/text_gray">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOzowMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/glass_input_selector"
+                        android:gravity="center_vertical"
+                        android:inputType="phone"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Ozow notification email"
+                    app:boxBackgroundMode="none"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="#00FF66"
+                    android:textColorHint="@color/text_gray">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOzowEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/glass_input_selector"
+                        android:gravity="center_vertical"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- FORM 3: MASTERCARD / CARD PAYMENT FORM -->
+            <LinearLayout
+                android:id="@+id/layoutCardDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Credit / Debit Card Details"
+                    android:textColor="#00FF66"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Card number (16 digits)"
+                    app:boxBackgroundMode="none"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="#00FF66"
+                    android:textColorHint="@color/text_gray">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCardNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/glass_input_selector"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:maxLength="16"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:hint="Expiry (MM/YY)"
+                        app:boxBackgroundMode="none"
+                        app:hintAnimationEnabled="true"
+                        app:hintTextColor="#00FF66"
+                        android:textColorHint="@color/text_gray">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCardExpiry"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@drawable/glass_input_selector"
+                            android:gravity="center_vertical"
+                            android:inputType="date"
+                            android:maxLength="5"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:hint="CVV (3 digits)"
+                        app:boxBackgroundMode="none"
+                        app:hintAnimationEnabled="true"
+                        app:hintTextColor="#00FF66"
+                        android:textColorHint="@color/text_gray">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCardCvv"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@drawable/glass_input_selector"
+                            android:gravity="center_vertical"
+                            android:inputType="numberPassword"
+                            android:maxLength="3"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Name on card"
+                    app:boxBackgroundMode="none"
+                    app:hintAnimationEnabled="true"
+                    app:hintTextColor="#00FF66"
+                    android:textColorHint="@color/text_gray">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCardName"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/glass_input_selector"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- Pay Now Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPayNow"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/glow_button_green"
+                android:letterSpacing="0.06"
+                android:text="Pay Now"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:letterSpacing="0.08"
+            android:text="© 2026 NextLVL GAMING."
+            android:textColor="@color/text_gray"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

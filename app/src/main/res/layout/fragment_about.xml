@@ -23,8 +23,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Our Head of Operations"
-                android:textColor="#00FF66"
+                android:letterSpacing="0.08"
+                android:text="ABOUT NEXTLVL GAMING"
+                android:textColor="@color/solar_lime"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -40,34 +41,102 @@
                     android:layout_height="match_parent"
                     android:contentDescription="@string/app_name"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/arena" />
+                    android:src="@drawable/memberships_pic" />
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:lineSpacingExtra="4dp"
-                android:text="This is what we stand for, the best gaming experiances and the most innovative Fantasy Builder. Through every project, we aim to deliver exceptional value and innovation, for the gamers that wear our crest."
-                android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/glass_badge_background"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text="EST. 2023"
+                    android:textColor="#00FF66"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/glass_badge_background"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text="OWNER: JASON NAIDOO"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
         </LinearLayout>
 
-        <!-- 3 Core Cards from About.html -->
+        <!-- Detailed Story Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/glass_card_background"
             android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/nextlvl_logo_desc"
+                android:scaleType="fitStart"
+                android:src="@drawable/nextlvl" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:letterSpacing="0.05"
+                android:text="The NextLVL Story"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Founded in 2023 by gaming visionary Jason Naidoo, NextLVL Gaming was forged with a single relentless objective: to revolutionize the competitive esports landscape and empower gamers across the globe with pro-grade equipment, immersive arena packages, and high-performance gaming apparel."
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="4dp"
+                android:text="What began as a passionate mission in 2023 has evolved into an elite gaming brand trusted by competitors, creators, and esports athletes. Under the leadership of Owner Jason Naidoo, NextLVL Gaming continues to push the boundaries of technology, design, and interactive fantasy builders."
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <!-- Core Highlights -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/glass_card_background"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🎮 Fantasy Builder &amp; Experiences"
+                android:text="🏆 Our Vision"
                 android:textColor="#00FF66"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -76,10 +145,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="We strive for the best gaming experiences and the most innovative Fantasy Builder."
+                android:text="To build the ultimate sanctuary and gear ecosystem for gamers who demand power, precision, and perfection."
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -93,7 +161,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🌐 Immersive Environments"
+                android:text="⚡ Established Heritage"
                 android:textColor="#00FF66"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -102,10 +170,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Our team is dedicated to creating immersive gaming environments."
+                android:text="Established in 2023, delivering unmatched performance for competitive gaming and pro esports arenas."
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -119,7 +186,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🚀 Innovation &amp; Excellence"
+                android:text="👑 Leadership"
                 android:textColor="#00FF66"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -128,11 +195,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="We are committed to pushing the boundaries of what's possible in gaming."
+                android:text="Guided by Owner Jason Naidoo's commitment to community, innovation, and gaming excellence."
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
-
         </LinearLayout>
+
+        <!-- Page Bottom Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:letterSpacing="0.08"
+            android:text="© 2026 NextLVL GAMING."
+            android:textColor="@color/text_gray"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

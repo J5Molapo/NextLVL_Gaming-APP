@@ -24,12 +24,37 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Category Filter Pill Clicks
+        val pills = listOf(binding.pillAll, binding.pillPackages, binding.pillExperiences, binding.pillMerch, binding.pillEsports)
+        pills.forEach { pill ->
+            pill.setOnClickListener {
+                pills.forEach {
+                    it.isSelected = false
+                    it.setTextColor(android.graphics.Color.WHITE)
+                }
+                pill.isSelected = true
+                pill.setTextColor(android.graphics.Color.BLACK)
+            }
+        }
+
         binding.btnViewProducts.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_ProductsFragment)
         }
 
         binding.btnLearnMore.setOnClickListener {
             findNavController().navigate(R.id.AboutFragment)
+        }
+
+        binding.btnSeeAllProducts.setOnClickListener {
+            findNavController().navigate(R.id.ProductsFragment)
+        }
+
+        binding.btnHeroViewPass.setOnClickListener {
+            findNavController().navigate(R.id.ProductsFragment)
+        }
+
+        binding.btnHeroViewArena.setOnClickListener {
+            findNavController().navigate(R.id.ProductsFragment)
         }
     }
 

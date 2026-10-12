@@ -9,37 +9,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="80dp">
 
-        <!-- Header Glass Banner -->
-        <LinearLayout
+        <!-- Standalone Brand Logo (NO CIRCLE, NO BOX) -->
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:contentDescription="@string/nextlvl_logo_desc"
+            android:scaleType="fitStart"
+            android:src="@drawable/nextlvl" />
+
+        <!-- Top Banner Header Artwork -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/glass_card_highlighted"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gaming packages &amp; experiences."
-                android:textColor="#00FF66"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Choose from our premium gaming packages or book an exciting hands-on experience at Gamer HQ."
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp" />
+            android:layout_height="200dp"
+            android:layout_marginTop="12dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="14dp"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="0dp">
 
                 <ImageView
@@ -49,97 +41,170 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/memberships_pic" />
             </androidx.cardview.widget.CardView>
+
+            <!-- Centered Title Pill Overlay -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/blockhead_pill_selector"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Ultimate Gamer Pass"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- Behance 3 Stat Cards Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/behance_card_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="★ Rating"
+                    android:textColor="#00FF66"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="4.8 stars"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/behance_card_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👥 Gamers"
+                    android:textColor="#00FF66"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="10k+ VIP"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/behance_card_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ Category"
+                    android:textColor="#00FF66"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Pro Esports"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <!-- SECTION 1: GAMING PACKAGES -->
+        <!-- Prominent Wide Action Button: "Book / Add Pass" -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddUltimate"
+            style="@style/Widget.Material3.Button.UnelevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/glow_button_green"
+            android:fontFamily="sans-serif-black"
+            android:text="Book Pass — R499"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+        <!-- Other Gaming Packages & Experiences -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="12dp"
-            android:text="Gaming Packages"
-            android:textColor="#00FF66"
+            android:fontFamily="sans-serif-black"
+            android:text="More Packages &amp; Gear"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- 1. Ultimate Gamer Pass -->
+        <!-- 1. VIP Gaming Experience -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ultimate Gamer Pass"
-                android:textColor="@color/white"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Unlimited access to premium gaming stations, priority booking, member rewards, and exclusive tournament entry."
-                android:textColor="@color/text_secondary"
-                android:textSize="13sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="R499.00"
-                    android:textColor="#00FF66"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAddUltimate"
-                    style="@style/Widget.Material3.Button.UnelevatedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:background="@drawable/glow_button_green"
-                    android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
-                    android:textColor="#000000"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@null" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- 2. VIP Gaming Experience -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:text="VIP Gaming Experience"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Private gaming lounge access, premium equipment, concierge service, and a luxury esports-style setup."
+                android:text="Private lounge access, premium equipment, and luxury esports setup."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -156,7 +221,7 @@
                     android:layout_weight="1"
                     android:text="R799.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -166,7 +231,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -174,28 +239,29 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 3. Esports Training Packages -->
+        <!-- 2. Esports Training Package -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Esports Training Packages"
+                android:fontFamily="sans-serif-black"
+                android:text="Esports Training Package"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Structured coaching, performance analysis, team drills, and skill development sessions for serious gamers."
+                android:text="Coaching, performance analysis, and team drills."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -212,7 +278,7 @@
                     android:layout_weight="1"
                     android:text="R599.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -222,7 +288,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -230,28 +296,29 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 4. Birthday Party Packages -->
+        <!-- 3. Birthday Party Package -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Birthday Party Packages"
+                android:fontFamily="sans-serif-black"
+                android:text="Birthday Party Package"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Custom party setups, themed gaming stations, snacks, decorations, and host support for unforgettable celebrations."
+                android:text="Custom party setups, themed gaming stations, snacks &amp; host support."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -268,7 +335,7 @@
                     android:layout_weight="1"
                     android:text="R1,299.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -278,7 +345,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -286,40 +353,29 @@
             </LinearLayout>
         </LinearLayout>
 
-
-        <!-- SECTION 2: INDIVIDUAL EXPERIENCES -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="12dp"
-            android:text="Individual Experiences"
-            android:textColor="#00FF66"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- 1. Virtual Reality -->
+        <!-- 4. Virtual Reality -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Virtual Reality"
+                android:fontFamily="sans-serif-black"
+                android:text="Virtual Reality Experience"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Step into immersive worlds with next-level VR gameplay, custom missions, and high-adrenaline challenges."
+                android:text="Immersive VR gameplay, custom missions, and high adrenaline."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -336,7 +392,7 @@
                     android:layout_weight="1"
                     android:text="R149.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -346,7 +402,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -354,28 +410,29 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 2. Racing Simulator Challenge -->
+        <!-- 5. Racing Simulator Challenge -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:text="Racing Simulator Challenge"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Compete in realistic racing environments with high-end sim setups for every level of driver."
+                android:text="Realistic racing environments with high-end sim setups."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -392,7 +449,7 @@
                     android:layout_weight="1"
                     android:text="R179.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -402,7 +459,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -410,28 +467,29 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 3. Escape Room Challenge -->
+        <!-- 6. Escape Room Challenge -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:text="Escape Room Challenge"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Solve puzzles, beat the clock, and work as a team in an immersive escape-room gaming experience."
+                android:text="Solve puzzles, beat the clock, and work as a team in an escape room."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -448,7 +506,7 @@
                     android:layout_weight="1"
                     android:text="R199.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -458,7 +516,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -466,55 +524,29 @@
             </LinearLayout>
         </LinearLayout>
 
-
-        <!-- SECTION 3: MERCHANDISE -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="12dp"
-            android:text="Merchandise"
-            android:textColor="#00FF66"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- 1. Hoodie -->
+        <!-- 7. Hoodie -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="0dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/hoodie_nxtlvl" />
-            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Hoodie"
+                android:fontFamily="sans-serif-black"
+                android:text="NextLvl Hoodie"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Premium comfort hoodie with Next LvL branding"
+                android:layout_marginTop="4dp"
+                android:text="Premium comfort hoodie with Next LvL branding."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -531,7 +563,7 @@
                     android:layout_weight="1"
                     android:text="R599.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -541,7 +573,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -549,43 +581,29 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 2. Merch Shirts -->
+        <!-- 8. Merch Shirts -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="0dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/nextlvl_merch_shirts" />
-            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif-black"
                 android:text="Merch Shirts"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Stylish tees for gamers who want to represent the gaming lifestyle"
+                android:layout_marginTop="4dp"
+                android:text="Stylish tees for gamers who want to represent the gaming lifestyle."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -602,7 +620,7 @@
                     android:layout_weight="1"
                     android:text="R249.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -612,7 +630,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -620,43 +638,29 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 3. Keyboard Set -->
+        <!-- 9. Keyboard Set -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="0dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/keyboard_set" />
-            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif-black"
                 android:text="Keyboard Set"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Premium gaming keyboard with customizable RGB lighting"
+                android:layout_marginTop="4dp"
+                android:text="Premium gaming keyboard with customizable RGB lighting."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -673,7 +677,7 @@
                     android:layout_weight="1"
                     android:text="R1,299.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -683,7 +687,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -691,43 +695,29 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 4. Enraged PufferJacket -->
+        <!-- 10. Enraged PufferJacket -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/glass_card_background"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/behance_card_bg"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="0dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/enraged_pufferjacket" />
-            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif-black"
                 android:text="Enraged PufferJacket"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Premium insulated jacket for VIP Members with exclusive Next LvL design"
+                android:layout_marginTop="4dp"
+                android:text="Premium insulated jacket for VIP Members with exclusive Next LvL design."
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -744,7 +734,7 @@
                     android:layout_weight="1"
                     android:text="R1,799.00"
                     android:textColor="#00FF66"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
@@ -754,13 +744,80 @@
                     android:layout_height="40dp"
                     android:background="@drawable/glow_button_green"
                     android:paddingHorizontal="16dp"
-                    android:text="Add to Cart"
+                    android:text="Add"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     android:textStyle="bold"
                     app:backgroundTint="@null" />
             </LinearLayout>
         </LinearLayout>
+
+        <!-- Behance Reviews Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Reviews"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/behance_card_bg"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Jamiro Hex"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="★ 4.8"
+                    android:textColor="#00FF66"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:text="Great graphics, incredible gaming equipment, and simple booking flow! Maximum replay value."
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Page Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:letterSpacing="0.08"
+            android:text="© 2026 NextLVL GAMING."
+            android:textColor="@color/text_gray"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -22,8 +22,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:letterSpacing="0.06"
                 android:text="Get in touch with Gamer HQ."
-                android:textColor="#00FF66"
+                android:textColor="@color/solar_lime"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -31,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="We are here to help with product questions, support, partnerships, and all things gaming."
+                android:text="Tap any contact option below to connect with us in your favorite app."
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
 
@@ -51,19 +52,23 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-        <!-- Contact Cards Grid -->
+        <!-- Interactive Contact Cards -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
 
-            <!-- Phone Card -->
+            <!-- 1. Phone Card (Launches Phone Dialer) -->
             <LinearLayout
+                android:id="@+id/btnContactPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/glass_card_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="16dp">
 
@@ -71,17 +76,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="📞 "
-                    android:textSize="20sp" />
+                    android:textSize="22sp" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phone"
+                        android:text="Phone (Tap to Call)"
                         android:textColor="#00FF66"
                         android:textSize="13sp"
                         android:textStyle="bold" />
@@ -91,16 +98,29 @@
                         android:layout_height="wrap_content"
                         android:text="+27 12 345 6789"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CALL ➔"
+                    android:textColor="@color/solar_lime"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Email Card -->
+            <!-- 2. Email Card (Launches Email Client) -->
             <LinearLayout
+                android:id="@+id/btnContactEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/glass_card_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="16dp">
 
@@ -108,17 +128,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="✉️ "
-                    android:textSize="20sp" />
+                    android:textSize="22sp" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email"
+                        android:text="Email (Tap to Send)"
                         android:textColor="#00FF66"
                         android:textSize="13sp"
                         android:textStyle="bold" />
@@ -128,16 +150,26 @@
                         android:layout_height="wrap_content"
                         android:text="hello@nextlvlgaming.co.za"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MAIL ➔"
+                    android:textColor="@color/solar_lime"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Hours Card -->
+            <!-- 3. Hours Card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/glass_card_background"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="16dp">
 
@@ -145,17 +177,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="⏰ "
-                    android:textSize="20sp" />
+                    android:textSize="22sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hours"
+                        android:text="Operating Hours"
                         android:textColor="#00FF66"
                         android:textSize="13sp"
                         android:textStyle="bold" />
@@ -171,21 +204,40 @@
 
         </LinearLayout>
 
-        <!-- Visit our HQ Banner -->
+        <!-- 4. Visit HQ Card (Launches Maps App) -->
         <LinearLayout
+            android:id="@+id/btnContactAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/glass_card_background"
+            android:clickable="true"
+            android:focusable="true"
             android:orientation="vertical"
             android:padding="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="📍 Visit our HQ"
-                android:textColor="#00FF66"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📍 Visit Gamer HQ"
+                    android:textColor="#00FF66"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MAPS ➔"
+                    android:textColor="@color/solar_lime"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -213,30 +265,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Our Mission"
-                android:textColor="#00FF66"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="To power the next generation of players with premium gear, support, and a community built for growth."
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="Thank you for choosing our Gamer HQ."
+                android:text="Thank you for choosing Gamer HQ."
                 android:textColor="@color/yetti_primary"
                 android:textSize="14sp"
                 android:textStyle="italic" />
 
         </LinearLayout>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:letterSpacing="0.08"
+            android:text="© 2026 NextLVL GAMING."
+            android:textColor="@color/text_gray"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

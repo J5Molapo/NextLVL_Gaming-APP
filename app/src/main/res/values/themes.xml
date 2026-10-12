@@ -4,14 +4,13 @@
         <item name="colorPrimary">@color/yetti_primary</item>
         <item name="colorPrimaryVariant">@color/yetti_primary_dark</item>
         <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/yetti_accent</item>
         <item name="colorSecondaryVariant">@color/yetti_accent</item>
         <item name="colorOnSecondary">@color/white</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">#FF0B0E14</item>
+        <item name="android:windowBackground">#FF0B0E14</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="fontFamily">sans-serif-black</item>
     </style>
 
     <style name="Theme.EnragedYetti" parent="Base.Theme.EnragedYetti" />

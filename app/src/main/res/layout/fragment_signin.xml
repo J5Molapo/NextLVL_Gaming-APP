@@ -63,17 +63,20 @@
                 android:hint="Contact method"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etContactMethod"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/glass_input_selector"
+                    android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp"
+                    android:singleLine="true"
                     android:text="Email"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -83,17 +86,20 @@
                 android:hint="Email address"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/glass_input_selector"
+                    android:gravity="center_vertical"
                     android:inputType="textEmailAddress"
                     android:paddingHorizontal="16dp"
-                    android:textColor="@color/white" />
+                    android:paddingVertical="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -133,16 +139,19 @@
                 android:hint="Email or Phone number"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etLoginEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/glass_input_selector"
+                    android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
-                    android:textColor="@color/white" />
+                    android:paddingVertical="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -152,7 +161,6 @@
                 android:hint="Password"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#00FF66"
@@ -160,11 +168,15 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etLoginPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/glass_input_selector"
+                    android:gravity="center_vertical"
                     android:inputType="textPassword"
                     android:paddingHorizontal="16dp"
-                    android:textColor="@color/white" />
+                    android:paddingVertical="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -242,16 +254,19 @@
                 android:hint="Username"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etChooseUsername"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/glass_input_selector"
+                    android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
-                    android:textColor="@color/white" />
+                    android:paddingVertical="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -261,7 +276,6 @@
                 android:hint="Password"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#00FF66"
@@ -269,11 +283,15 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etChoosePassword"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/glass_input_selector"
+                    android:gravity="center_vertical"
                     android:inputType="textPassword"
                     android:paddingHorizontal="16dp"
-                    android:textColor="@color/white" />
+                    android:paddingVertical="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton

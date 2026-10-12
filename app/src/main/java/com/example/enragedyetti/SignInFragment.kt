@@ -2,11 +2,11 @@ package com.example.enragedyetti
 
 import android.os.Bundle
 import android.util.Patterns
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.enragedyetti.databinding.FragmentSigninBinding
 
@@ -53,6 +53,9 @@ class SignInFragment : Fragment() {
             }
 
             binding.etEmail.error = null
+            UserSessionManager.tempSignUpContact = contact
+            UserSessionManager.tempSignUpMethod = if (method.contains("phone")) "phone" else "email"
+
             // Advance to Choose Username
             binding.cardSignIn.visibility = View.GONE
             binding.cardChooseUsername.visibility = View.VISIBLE
@@ -85,11 +88,13 @@ class SignInFragment : Fragment() {
             }
 
             if (isValid) {
-                val username = if (identifier.contains("@")) identifier.substringBefore("@") else identifier
-                MainActivity.isLoggedIn = true
-                MainActivity.currentUsername = username
-                Toast.makeText(context, "Welcome back, $username!", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.ProfileFragment)
+                val (success, message) = UserSessionManager.loginUser(identifier, pass)
+                if (success) {
+                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.ProfileFragment)
+                } else {
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                }
             }
         }
 
@@ -123,8 +128,7 @@ class SignInFragment : Fragment() {
             }
 
             if (isValid) {
-                MainActivity.isLoggedIn = true
-                MainActivity.currentUsername = username
+                UserSessionManager.registerUser(username, pass)
                 Toast.makeText(context, "Account created successfully for $username!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.ProfileFragment)
             }
