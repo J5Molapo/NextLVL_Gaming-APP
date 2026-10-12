@@ -56,14 +56,23 @@ class CheckoutFragment : Fragment() {
             if (validatePaymentDetails()) {
                 // Save Order Record into UserSessionManager
                 val grandTotal = CartManager.getGrandTotal()
-                val orderId = "ORDER-" + System.currentTimeMillis()
+                val orderId = UserSessionManager.generateOrderId()
                 val order = OrderHistory(
                     id = orderId,
                     total = grandTotal,
                     items = ArrayList(CartManager.items),
-                    timestamp = System.currentTimeMillis().toString()
+                    timestamp = UserSessionManager.getCurrentTimestamp()
                 )
                 UserSessionManager.addOrder(order)
+
+                // Trigger interactive order confirmation email
+                val recipientEmail = when (currentMethod) {
+                    "Ozow" -> binding.etOzowEmail.text.toString().trim()
+                    else -> UserSessionManager.currentUser?.email ?: ""
+                }
+                context?.let { ctx ->
+                    UserSessionManager.sendOrderEmailIntent(ctx, recipientEmail, orderId, grandTotal)
+                }
 
                 // Clear active cart after successful checkout
                 CartManager.clear()

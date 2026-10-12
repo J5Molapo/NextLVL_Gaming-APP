@@ -56,11 +56,12 @@
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
-            <!-- Contact Method Input -->
+            <!-- Contact Method Selection Box (Tap to toggle Email / Phone) -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etContactMethodLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contact method"
+                android:hint="Contact method (Tap to toggle Email/Phone)"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
                 app:hintTextColor="#00FF66"
@@ -70,6 +71,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:background="@drawable/glass_input_selector"
+                    android:clickable="true"
+                    android:focusable="false"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="12dp"
@@ -79,7 +82,9 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Account Contact Input Field (Changes dynamically) -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etEmailLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"

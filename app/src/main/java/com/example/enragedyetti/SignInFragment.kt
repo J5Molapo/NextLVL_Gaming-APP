@@ -1,6 +1,7 @@
 package com.example.enragedyetti
 
 import android.os.Bundle
+import android.text.InputType
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,22 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Contact Method Selection Toggle Listener (Email vs Phone)
+        binding.etContactMethod.setOnClickListener {
+            val current = binding.etContactMethod.text.toString().trim()
+            if (current.equals("Email", ignoreCase = true)) {
+                binding.etContactMethod.setText("Phone")
+                binding.etEmailLayout.hint = "Phone number (+27...)"
+                binding.etEmail.inputType = InputType.TYPE_CLASS_PHONE
+                binding.etEmail.text?.clear()
+            } else {
+                binding.etContactMethod.setText("Email")
+                binding.etEmailLayout.hint = "Email address"
+                binding.etEmail.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS or InputType.TYPE_CLASS_TEXT
+                binding.etEmail.text?.clear()
+            }
+        }
+
         // Switch to "Choose a Username" (Section 4)
         binding.btnGotoChooseUsername.setOnClickListener {
             binding.cardSignIn.visibility = View.GONE
@@ -38,7 +55,7 @@ class SignInFragment : Fragment() {
             val method = binding.etContactMethod.text.toString().trim().lowercase()
 
             if (contact.isEmpty()) {
-                binding.etEmail.error = "Please enter your contact details"
+                binding.etEmail.error = if (method.contains("phone")) "Please enter your phone number" else "Please enter your email address"
                 return@setOnClickListener
             }
 
@@ -47,7 +64,7 @@ class SignInFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            if (method.contains("phone") && contact.length < 10) {
+            if (method.contains("phone") && (contact.length < 10 || !contact.filter { it.isDigit() }.length.let { it >= 10 })) {
                 binding.etEmail.error = "Please enter a valid phone number (at least 10 digits)"
                 return@setOnClickListener
             }
@@ -128,8 +145,14 @@ class SignInFragment : Fragment() {
             }
 
             if (isValid) {
-                UserSessionManager.registerUser(username, pass)
+                val user = UserSessionManager.registerUser(username, pass)
                 Toast.makeText(context, "Account created successfully for $username!", Toast.LENGTH_SHORT).show()
+
+                // Trigger interactive welcome email from dior.dynasty54@gmail.com
+                context?.let { ctx ->
+                    UserSessionManager.sendWelcomeEmailIntent(ctx, user.email, username)
+                }
+
                 findNavController().navigate(R.id.ProfileFragment)
             }
         }
