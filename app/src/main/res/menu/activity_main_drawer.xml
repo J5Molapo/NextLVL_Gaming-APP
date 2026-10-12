@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/HomeFragment"
+            android:icon="@drawable/ic_nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/AboutFragment"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="About Us" />
+        <item
+            android:id="@+id/ProductsFragment"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="Products &amp; Packages" />
+        <item
+            android:id="@+id/CartFragment"
+            android:icon="@drawable/ic_nav_cart"
+            android:title="Shopping Cart" />
+        <item
+            android:id="@+id/CheckoutFragment"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="Secure Checkout" />
+        <item
+            android:id="@+id/SignInFragment"
+            android:icon="@drawable/ic_nav_profile"
+            android:title="Sign In / Register" />
+        <item
+            android:id="@+id/ProfileFragment"
+            android:icon="@drawable/ic_nav_history"
+            android:title="My Account" />
+        <item
+            android:id="@+id/EnquiryFragment"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="General Enquiry" />
+        <item
+            android:id="@+id/ContactFragment"
+            android:icon="@android:drawable/ic_menu_call"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/FirstFragment"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="First Page" />
+        <item
+            android:id="@+id/SecondFragment"
+            android:icon="@android:drawable/ic_menu_day"
+            android:title="Second Page" />
+    </group>
+</menu>
