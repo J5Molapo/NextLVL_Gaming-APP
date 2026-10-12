@@ -27,19 +27,12 @@
                 android:orientation="horizontal"
                 android:layout_marginBottom="16dp">
 
-                <FrameLayout
+                <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="@drawable/glowing_circle_logo"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@string/nextlvl_logo_desc"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/nextlvl" />
-                </FrameLayout>
+                    android:contentDescription="@string/nextlvl_logo_desc"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/nextlvl" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -51,7 +44,7 @@
                         android:id="@+id/tvProfileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Yetti Member"
+                        android:text="Fresh Yetti Member"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -60,7 +53,7 @@
                         android:id="@+id/tvProfileEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="member@enragedyetti.com"
+                        android:text="Sign in or create account"
                         android:textColor="@color/yetti_primary"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -77,7 +70,7 @@
                 android:background="@drawable/glow_button_dark"
                 android:gravity="start|center_vertical"
                 android:paddingHorizontal="16dp"
-                android:text="Order"
+                android:text="Orders"
                 android:textColor="@color/glow_button_dark_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -146,7 +139,7 @@
 
         <!-- Dynamic Sub-Card Container -->
 
-        <!-- 1. Orders Section (Section 3) -->
+        <!-- 1. Orders Section -->
         <LinearLayout
             android:id="@+id/cardOrders"
             android:layout_width="match_parent"
@@ -160,7 +153,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Orders"
+                android:text="Orders History"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -171,26 +164,15 @@
                 android:layout_marginVertical="10dp"
                 android:background="#30FFFFFF" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ordersContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ORDER-1791641156138 ---- Total: R3726.00"
-                android:textColor="#00FF66"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:lineSpacingExtra="4dp"
-                android:text="- Keyboard set (R1299.00)\n- Enraged PufferJacket (R1799.00)\n- Ultimate Gamer Pass (R499.00)\n- Escape Room Challenge (R199.00)"
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp" />
+                android:orientation="vertical" />
 
         </LinearLayout>
 
-        <!-- 2. Change Username Section (Section 7) -->
+        <!-- 2. Change Username Section -->
         <LinearLayout
             android:id="@+id/cardChangeUsername"
             android:layout_width="match_parent"
@@ -214,7 +196,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Current: YettiNXT 433"
+                android:text="Current: None"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
 
@@ -225,7 +207,6 @@
                 android:hint="New username"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
@@ -252,7 +233,7 @@
 
         </LinearLayout>
 
-        <!-- 3. Change Password Section (Section 1) -->
+        <!-- 3. Change Password Section -->
         <LinearLayout
             android:id="@+id/cardChangePassword"
             android:layout_width="match_parent"
@@ -278,7 +259,6 @@
                 android:hint="Current password"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#00FF66"
@@ -300,7 +280,6 @@
                 android:hint="New Password"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#00FF66"
@@ -330,7 +309,7 @@
 
         </LinearLayout>
 
-        <!-- 4. Log a Ticket Section (Section 2) -->
+        <!-- 4. Log a Ticket Section -->
         <LinearLayout
             android:id="@+id/cardLogTicket"
             android:layout_width="match_parent"
@@ -356,7 +335,6 @@
                 android:hint="Subject"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
@@ -375,7 +353,6 @@
                 android:hint="Details"
                 app:boxBackgroundMode="none"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
@@ -403,6 +380,19 @@
                 app:backgroundTint="@null" />
 
         </LinearLayout>
+
+        <!-- Page Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:letterSpacing="0.08"
+            android:text="© 2026 NextLVL GAMING."
+            android:textColor="@color/text_gray"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
