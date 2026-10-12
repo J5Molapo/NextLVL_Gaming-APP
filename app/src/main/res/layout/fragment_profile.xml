@@ -224,13 +224,15 @@
                 android:layout_marginTop="16dp"
                 android:hint="New username"
                 app:boxBackgroundMode="none"
-                app:hintTextColor="@color/yetti_primary"
+                app:hintAnimationEnabled="true"
+
+                app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etNewUsername"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/glass_input_background"
+                    android:background="@drawable/glass_input_selector"
                     android:paddingHorizontal="16dp"
                     android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -275,15 +277,17 @@
                 android:layout_marginTop="16dp"
                 android:hint="Current password"
                 app:boxBackgroundMode="none"
-                app:hintTextColor="@color/yetti_primary"
+                app:hintAnimationEnabled="true"
+
+                app:hintTextColor="#00FF66"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/yetti_primary"
+                app:passwordToggleTint="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etCurrentPassword"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/glass_input_background"
+                    android:background="@drawable/glass_input_selector"
                     android:inputType="textPassword"
                     android:paddingHorizontal="16dp"
                     android:textColor="@color/white" />
@@ -295,15 +299,17 @@
                 android:layout_marginTop="12dp"
                 android:hint="New Password"
                 app:boxBackgroundMode="none"
-                app:hintTextColor="@color/yetti_primary"
+                app:hintAnimationEnabled="true"
+
+                app:hintTextColor="#00FF66"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/yetti_primary"
+                app:passwordToggleTint="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etNewPassword"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/glass_input_background"
+                    android:background="@drawable/glass_input_selector"
                     android:inputType="textPassword"
                     android:paddingHorizontal="16dp"
                     android:textColor="@color/white" />
@@ -349,13 +355,15 @@
                 android:layout_marginTop="16dp"
                 android:hint="Subject"
                 app:boxBackgroundMode="none"
-                app:hintTextColor="@color/yetti_primary"
+                app:hintAnimationEnabled="true"
+
+                app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etTicketSubject"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/glass_input_background"
+                    android:background="@drawable/glass_input_selector"
                     android:paddingHorizontal="16dp"
                     android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -366,13 +374,15 @@
                 android:layout_marginTop="12dp"
                 android:hint="Details"
                 app:boxBackgroundMode="none"
-                app:hintTextColor="@color/yetti_primary"
+                app:hintAnimationEnabled="true"
+
+                app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etTicketDetails"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="@drawable/glass_input_background"
+                    android:background="@drawable/glass_input_selector"
                     android:gravity="top"
                     android:inputType="textMultiLine"
                     android:padding="16dp"
