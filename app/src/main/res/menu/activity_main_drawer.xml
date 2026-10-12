@@ -37,13 +37,5 @@
             android:id="@+id/ContactFragment"
             android:icon="@android:drawable/ic_menu_call"
             android:title="Contact Us" />
-        <item
-            android:id="@+id/FirstFragment"
-            android:icon="@android:drawable/ic_menu_agenda"
-            android:title="First Page" />
-        <item
-            android:id="@+id/SecondFragment"
-            android:icon="@android:drawable/ic_menu_day"
-            android:title="Second Page" />
     </group>
 </menu>

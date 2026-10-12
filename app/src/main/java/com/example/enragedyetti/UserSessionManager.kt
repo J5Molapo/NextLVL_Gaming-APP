@@ -1,5 +1,9 @@
 package com.example.enragedyetti
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.widget.Toast
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -39,7 +43,6 @@ object UserSessionManager {
     var tempSignUpContact: String = ""
     var tempSignUpMethod: String = "email"
 
-    // Fresh initialization — NO prebuilt static profiles
     init {
         registeredAccounts.clear()
         currentUser = null
@@ -135,5 +138,41 @@ object UserSessionManager {
         val user = currentUser ?: return Pair(false, "No active user session")
         user.username = newUsername
         return Pair(true, "Username updated to $newUsername")
+    }
+
+    fun sendWelcomeEmailIntent(context: Context, recipientEmail: String, username: String) {
+        val targetEmail = if (recipientEmail.isEmpty()) "dior.dynasty54@gmail.com" else recipientEmail
+        val subject = "Welcome to NextLVL Gaming - Fellow Yetti!"
+        val body = "Hi $username,\n\nWelcome to NextLVL Gaming! We are so glad to have a fellow Yetti join our tribe!\n\nFrom: dior.dynasty54@gmail.com (NextLVL Gaming Team)"
+
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:$targetEmail")
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(targetEmail, "dior.dynasty54@gmail.com"))
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, body)
+        }
+        try {
+            context.startActivity(Intent.createChooser(intent, "Send Interactive Welcome Email"))
+        } catch (e: Exception) {
+            Toast.makeText(context, "Welcome email triggered from dior.dynasty54@gmail.com", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun sendOrderEmailIntent(context: Context, recipientEmail: String, orderId: String, totalAmount: Double) {
+        val targetEmail = if (recipientEmail.isEmpty()) "dior.dynasty54@gmail.com" else recipientEmail
+        val subject = "NextLVL Order Confirmation ($orderId) - Fellow Yetti!"
+        val body = "Hi Fellow Yetti,\n\nThank you for your order! Your order $orderId (Total: R${String.format(Locale.US, "%.2f", totalAmount)}) has been placed successfully.\n\nWe are so glad to have a fellow Yetti in our tribe!\n\nFrom: dior.dynasty54@gmail.com (NextLVL Gaming Team)"
+
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:$targetEmail")
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(targetEmail, "dior.dynasty54@gmail.com"))
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, body)
+        }
+        try {
+            context.startActivity(Intent.createChooser(intent, "Send Order Confirmation Email"))
+        } catch (e: Exception) {
+            Toast.makeText(context, "Order email triggered from dior.dynasty54@gmail.com", Toast.LENGTH_SHORT).show()
+        }
     }
 }
