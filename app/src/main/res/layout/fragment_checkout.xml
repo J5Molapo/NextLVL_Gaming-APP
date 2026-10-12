@@ -121,13 +121,15 @@
                 android:layout_marginTop="10dp"
                 android:hint="Capitec mobile number"
                 app:boxBackgroundMode="none"
-                app:hintTextColor="@color/yetti_primary"
+                app:hintAnimationEnabled="true"
+
+                app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPaymentAccount"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/glass_input_background"
+                    android:background="@drawable/glass_input_selector"
                     android:inputType="phone"
                     android:paddingHorizontal="16dp"
                     android:textColor="@color/white" />
@@ -139,13 +141,15 @@
                 android:layout_marginTop="12dp"
                 android:hint="Full name"
                 app:boxBackgroundMode="none"
-                app:hintTextColor="@color/yetti_primary"
+                app:hintAnimationEnabled="true"
+
+                app:hintTextColor="#00FF66"
                 android:textColorHint="@color/text_gray">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFullName"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/glass_input_background"
+                    android:background="@drawable/glass_input_selector"
                     android:paddingHorizontal="16dp"
                     android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
