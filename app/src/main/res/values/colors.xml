@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yetti_primary">#3DDC84</color>
+    <color name="yetti_primary_dark">#2EAF69</color>
+    <color name="yetti_green">#3DDC84</color>
+    <color name="yetti_green_dark">#2EAF69</color>
+    <color name="yetti_accent">#FF4081</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="text_secondary">#D0D0E0</color>
+    <color name="text_gray">#A0A0B0</color>
+    <color name="glass_white_10">#1AFFFFFF</color>
+    <color name="glass_white_20">#33FFFFFF</color>
+    <color name="glass_border">#40FFFFFF</color>
+    <color name="glass_border_green">#603DDC84</color>
+    <color name="transparent">#00000000</color>
+</resources>

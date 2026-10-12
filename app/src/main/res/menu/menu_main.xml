@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/HomeFragment"
+        android:title="Home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ProductsFragment"
+        android:title="Products"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/CartFragment"
+        android:title="Cart"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ProfileFragment"
+        android:title="My Account"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/SignInFragment"
+        android:title="Sign In"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/AboutFragment"
+        android:title="About"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/EnquiryFragment"
+        android:title="Enquiry"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ContactFragment"
+        android:title="Contact"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Member Profile Top Glass Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/glass_card_highlighted"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Profile Header Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/glowing_circle_logo"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/nextlvl_logo_desc"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nextlvl" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yetti Member"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProfileEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="member@enragedyetti.com"
+                        android:textColor="@color/yetti_primary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Profile Menu Action Buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenuOrder"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/glow_button_dark"
+                android:gravity="start|center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="Order"
+                android:textColor="@color/glow_button_dark_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenuChangeUsername"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/glow_button_dark"
+                android:gravity="start|center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="Change username"
+                android:textColor="@color/glow_button_dark_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenuChangePassword"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/glow_button_dark"
+                android:gravity="start|center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="Change password"
+                android:textColor="@color/glow_button_dark_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenuLogTicket"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/glow_button_dark"
+                android:gravity="start|center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="Log a ticket"
+                android:textColor="@color/glow_button_dark_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenuLogOut"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@drawable/red_button_background"
+                android:gravity="start|center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="Log out"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+        <!-- Dynamic Sub-Card Container -->
+
+        <!-- 1. Orders Section (Section 3) -->
+        <LinearLayout
+            android:id="@+id/cardOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/glass_card_background"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orders"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"
+                android:background="#30FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ORDER-1791641156138 ---- Total: R3726.00"
+                android:textColor="#00FF66"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="- Keyboard set (R1299.00)\n- Enraged PufferJacket (R1799.00)\n- Ultimate Gamer Pass (R499.00)\n- Escape Room Challenge (R199.00)"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- 2. Change Username Section (Section 7) -->
+        <LinearLayout
+            android:id="@+id/cardChangeUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/glass_card_background"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change username"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCurrentUsernameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Current: YettiNXT 433"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="New username"
+                app:boxBackgroundMode="none"
+                app:hintTextColor="@color/yetti_primary"
+                android:textColorHint="@color/text_gray">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNewUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/glass_input_background"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveUsername"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="120dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/glow_button_green"
+                android:text="Save"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+        <!-- 3. Change Password Section (Section 1) -->
+        <LinearLayout
+            android:id="@+id/cardChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/glass_card_background"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change password"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Current password"
+                app:boxBackgroundMode="none"
+                app:hintTextColor="@color/yetti_primary"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/yetti_primary"
+                android:textColorHint="@color/text_gray">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCurrentPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/glass_input_background"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="New Password"
+                app:boxBackgroundMode="none"
+                app:hintTextColor="@color/yetti_primary"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/yetti_primary"
+                android:textColorHint="@color/text_gray">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNewPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/glass_input_background"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSavePassword"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/glow_button_green"
+                android:text="Change password"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+        <!-- 4. Log a Ticket Section (Section 2) -->
+        <LinearLayout
+            android:id="@+id/cardLogTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/glass_card_background"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log a ticket"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Subject"
+                app:boxBackgroundMode="none"
+                app:hintTextColor="@color/yetti_primary"
+                android:textColorHint="@color/text_gray">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTicketSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/glass_input_background"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Details"
+                app:boxBackgroundMode="none"
+                app:hintTextColor="@color/yetti_primary"
+                android:textColorHint="@color/text_gray">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTicketDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/glass_input_background"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:padding="16dp"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitTicket"
+                style="@style/Widget.Material3.Button.UnelevatedButton"
+                android:layout_width="160dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/glow_button_green"
+                android:text="Submit ticket"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

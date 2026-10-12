@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.enragedyetti.HomeFragment"
+        android:label="Enraged Yetti"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeFragment_to_ProductsFragment"
+            app:destination="@id/ProductsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.enragedyetti.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.enragedyetti.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignInFragment"
+        android:name="com.example.enragedyetti.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_signin" />
+
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="com.example.enragedyetti.ProfileFragment"
+        android:label="My Account"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/ProductsFragment"
+        android:name="com.example.enragedyetti.ProductsFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_products" />
+
+    <fragment
+        android:id="@+id/AboutFragment"
+        android:name="com.example.enragedyetti.AboutFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/EnquiryFragment"
+        android:name="com.example.enragedyetti.EnquiryFragment"
+        android:label="Enquiry"
+        tools:layout="@layout/fragment_enquiry" />
+
+    <fragment
+        android:id="@+id/ContactFragment"
+        android:name="com.example.enragedyetti.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/CartFragment"
+        android:name="com.example.enragedyetti.CartFragment"
+        android:label="My Cart"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_CartFragment_to_CheckoutFragment"
+            app:destination="@id/CheckoutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CheckoutFragment"
+        android:name="com.example.enragedyetti.CheckoutFragment"
+        android:label="Checkout"
+        tools:layout="@layout/fragment_checkout">
+        <action
+            android:id="@+id/action_CheckoutFragment_to_PaymentSuccessfulFragment"
+            app:destination="@id/PaymentSuccessfulFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PaymentSuccessfulFragment"
+        android:name="com.example.enragedyetti.PaymentSuccessfulFragment"
+        android:label="Payment Successful"
+        tools:layout="@layout/fragment_paymentsuccessful" />
+</navigation>

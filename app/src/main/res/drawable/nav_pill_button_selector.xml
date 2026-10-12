@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state: Glowing bright neon green -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#00FF66" />
+            <corners android:radius="20dp" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+    <!-- Selected state (Active page): Glowing bright neon green -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#00FF66" />
+            <corners android:radius="20dp" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+    <!-- Normal state: Dark glass fill with glowing green border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E005070C" />
+            <corners android:radius="20dp" />
+            <stroke android:width="1.5dp" android:color="#00FF66" />
+        </shape>
+    </item>
+</selector>
