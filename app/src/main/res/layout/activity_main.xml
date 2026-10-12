@@ -16,13 +16,13 @@
         android:src="@drawable/bckground"
         android:contentDescription="@string/app_background_desc" />
 
-    <!-- Darkened App Background Overlay (80% Dark Layer for High-Contrast Neon Glass) -->
+    <!-- Darkened App Background Overlay (80% Dark Layer) -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#CC030408" />
 
-    <!-- Top Navigation Header Bar -->
+    <!-- Top Navigation Header Bar Matching Screenshot -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,16 +32,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="60dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingHorizontal="12dp">
+            android:paddingHorizontal="16dp">
 
-            <!-- Top Left Circular Glowing Logo (nextlvl.png) -->
+            <!-- Top Left Logo -->
             <FrameLayout
                 android:id="@+id/btnHeaderLogo"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/glowing_circle_logo"
                 android:clickable="true"
                 android:focusable="true"
@@ -55,127 +55,140 @@
                     android:src="@drawable/nextlvl" />
             </FrameLayout>
 
-            <!-- Horizontal Scrollable Navigation Pills -->
-            <HorizontalScrollView
+            <!-- Header Navigation Tabs Matching Screenshot -->
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
                 android:layout_weight="1"
-                android:scrollbars="none">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
+                <!-- 1. Home Tab -->
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tabHome"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNavHome"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
+                    <ImageView
+                        android:id="@+id/ivTabHomeIcon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_nav_home"
+                        app:tint="#00FF66" />
+
+                    <TextView
+                        android:id="@+id/tvTabHomeText"
                         android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
                         android:text="Home"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNavAbout"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="About"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNavProducts"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="Products"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNavContact"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="Contact"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNavEnquiry"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="Enquiry"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <!-- Account / Sign In Pill (Default Sign In for fresh user flow) -->
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNavProfile"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:layout_marginEnd="6dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="0dp"
-                        android:text="Sign In"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnNavCart"
-                        style="@style/Widget.Material3.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:background="@drawable/nav_pill_button_selector"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="0dp"
-                        android:text="Cart"
-                        android:textColor="@color/nav_pill_text_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:backgroundTint="@null" />
-
+                        android:textColor="#00FF66"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
-            </HorizontalScrollView>
+
+                <!-- 2. Wallet / Cart Tab -->
+                <LinearLayout
+                    android:id="@+id/tabCart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:id="@+id/ivTabCartIcon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_nav_cart"
+                        app:tint="#80FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/tvTabCartText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="Cart"
+                        android:textColor="#80FFFFFF"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- 3. Orders / History Tab -->
+                <LinearLayout
+                    android:id="@+id/tabOrders"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:id="@+id/ivTabOrdersIcon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_nav_history"
+                        app:tint="#80FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/tvTabOrdersText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="Orders"
+                        android:textColor="#80FFFFFF"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- 4. Profile / Sign In Tab -->
+                <LinearLayout
+                    android:id="@+id/tabProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:id="@+id/ivTabProfileIcon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_nav_profile"
+                        app:tint="#80FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/tvTabProfileText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="Sign In"
+                        android:textColor="#80FFFFFF"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
